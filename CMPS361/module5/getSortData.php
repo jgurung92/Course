@@ -39,22 +39,6 @@ usort($data, function($a, $b) use ($sortColumn, $sortOrder) {
     return $sortOrder === 'asc' ? strcmp($a[$sortColumn], $b[$sortColumn]) : strcmp($b[$sortColumn], $a[$sortColumn]);
 });
 
-/*        
-        // Sorting logic
-        $sortColumn = isset($_GET['sort']) ? $_GET['sort'] : 'id'; //Default sort by 'id'
-        $sortOrder = isset($_GET['order']) && $_GET['order'] == 'desc' ? 'desc' : 'asc'; //Default order is 'asc'
-        
-        // Sort the data based on column and order
-        usort($data, function($a, $b) use ($sortColumn, $sortOrder) {
-            if ($sortOrder == 'asc') {
-                return strcmp($a[$sortColumn], $b[$sortColumn]);
-            } else {
-                return strcmp($b[$sortColumn], $a[$sortColumn]);
-            }
-        });
-*/        
-
-
         // Calculate the starting index of the current page
         $startIndex = ($currentPage - 1) * $limit;
 
@@ -76,18 +60,7 @@ usort($data, function($a, $b) use ($sortColumn, $sortOrder) {
         echo "</tr>";
         echo "</thead>";
         echo "<tbody>";
-/*
-         // Build out the table
-         echo "<table border = '1' cellpadding = '10'>";
-         echo "<thread>";
-         // creating table row (<tr>)
-         echo "<tr>";
-         echo "<th> Product ID </th>";
-         echo "<th> Product Name </th>";
-         echo "<th> Category </th>";
-         echo "</tr>";
-         echo "</thread>";
-*/
+
         // loop through the data
         foreach ($pageData as $post) {
             echo "<tr>";
