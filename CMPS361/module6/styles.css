@@ -22,7 +22,6 @@ caption {
     margin-bottom: 2rem;
     text-align: left;
     color: #117a65;
-    /* padding-top:  */
 }
 
 th td  {
@@ -31,11 +30,9 @@ th td  {
 
 tbody tr {
     border: 1px solid #dddddd ;  
-    /* border:none; */
 }
 
 table tr:nth-of-type(odd) {
-    /* background-color: #f3f3f3; */
     background-color:#ebf5fb;
     
 }
