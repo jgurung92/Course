@@ -36,13 +36,22 @@
 
 table tr th {
     border-bottom: 1px solid black;
+    /* border: 1px solid red; */
     padding: 1%;
-    text-align: left;
+    text-align: center;
+
 }
 
 table tr td {
+    text-align: left;
     padding: 1%;
+    /* border: 1px solid red;  */
 }
+
+.id-column {
+    padding: 0 10px;
+}
+
 
 .btn-primary {
     background-color: #1e90ff;
@@ -50,6 +59,8 @@ table tr td {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    border-radius: .2rem;
+    border: none;
 }
 
 .btn-primary:hover {
@@ -62,6 +73,7 @@ table tr td {
     color: black;
     text-decoration: none;
     font-weight: bold;
+    border-radius: .2rem;
 }
 
 .btn-secondary:hover {
@@ -74,6 +86,7 @@ table tr td {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    border-radius: .2rem;
 }
 
 .btn-danger:hover {
@@ -87,6 +100,7 @@ table tr td {
 
 .error {
     color: #ff4757;
+    margin-bottom: 3%; 
 }
 /* CSS for Menu */
 .menu {
@@ -157,4 +171,80 @@ table tr td {
     padding: 2%;
     border: none;
     border-radius: .3rem;
+}
+
+.pagination {
+    margin-top: 2%;
+    padding: 1%;
+}
+
+.pagination a {
+    margin: 0 3px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination a:hover {
+    background-color: #1e90ff; /* Change color on hover */
+    color: white;
+}
+
+
+.manage-admin-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* .toggle-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.toggle-button:hover {
+    background-color: #0056b3;
+} */
+
+.search-sort-options {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.search-sort-options input,
+.search-sort-options select {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+}
+
+.search-sort-options button {
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-sort-options button:hover {
+    background-color: #218838;
+}
+
+.pagination a, .pagination strong {
+    margin: 0 5px;
 }

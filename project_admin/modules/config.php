@@ -2,7 +2,7 @@
     session_start();
 
     // Connection parameters
-    $siteurl = 'http://localhost:3000/project_admin/';
+    // $siteurl = 'http://localhost:3000/project_admin/';
     $host = 'localhost';
     $port = '5432';
     $dbname = 'restaurant';

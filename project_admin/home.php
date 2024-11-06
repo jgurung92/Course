@@ -1,5 +1,5 @@
 
-<?php include('modules/menu.php') ?>
+<?php include('modules/menu.php') ?>;
 
 <!-- Main-Content Section Starts -->
 <div class="main-content">

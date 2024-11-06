@@ -13,44 +13,10 @@ include('modules/menu.php')
         // Debugging: Check all session variables
         // print_r($_SESSION); 
 
-        
-    
-
         if (isset($_SESSION['admin-message'])) {
             echo "<div class='success'>" . $_SESSION['admin-message'] . "</div>"; // Displaying Session Message
             unset($_SESSION['admin-message']); // Clear the message after displaying
         }
-
-        // // Message Session for Delete 
-        // if (isset($_SESSION['delete'])) {
-        //     echo $_SESSION['delete'];
-        //     unset($_SESSION['delete']); 
-        // }
-
-        // //  Message Session for Update 
-        // if (isset($_SESSION['update'])) {
-        //     echo $_SESSION['update'];
-        //     unset($_SESSION['update']); 
-        // }
-
-        // //  Message Session for user-not-found 
-        // if (isset($_SESSION['user-not-found'])) {
-        //     echo $_SESSION['user-not-found'];
-        //     unset($_SESSION['user-not-found']); 
-        // }
-
-        // //  Message Session for pwd-not-match
-        // if (isset($_SESSION['pwd-not-match'])) {
-        //     echo $_SESSION['pwd-not-match'];
-        //     unset($_SESSION['pwd-not-match']); 
-        // }
-
-        // //  Message Session for change-pwd
-        // if (isset($_SESSION['change-pwd'])) {
-        //     echo $_SESSION['change-pwd'];
-        //     unset($_SESSION['change-pwd']); 
-        // }
-
         ?>
 
 
