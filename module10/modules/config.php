@@ -12,12 +12,11 @@
     $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$db_password");
 
     // Check connection
-    if (!$conn) {
+    if ($conn===false) {
         die("Connection error: " . pg_last_error());
     }
 
 ?>
-
 
 
 

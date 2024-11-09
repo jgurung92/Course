@@ -80,7 +80,7 @@
                 $sql = "SELECT * FROM admin WHERE full_name LIKE '%$search_query%' OR username LIKE '%$search_query%' OR id::text LIKE '%$search_query%' ORDER BY $sort_by LIMIT $limit OFFSET $offset";
                 $result = pg_query($conn, $sql);
 
-                if ($result == TRUE) {
+                if ($result !== false) {
                     $count = pg_num_rows($result); 
                     $sn = $offset + 1; // Starting serial number
 
@@ -113,10 +113,21 @@
                 // Query to count total records for pagination
                 $total_records_query = "SELECT COUNT(*) AS total FROM admin";
                 $total_records_result = pg_query($conn, $total_records_query);
-                $total_records_row = pg_fetch_assoc($total_records_result);
-                $total_records = $total_records_row['total'];
-                $total_pages = ceil($total_records / $limit);
-                
+
+				if ($total_records_result !== false) {
+					$total_records_row = pg_fetch_assoc($total_records_result);
+					// Check if $total_records_row is valid and contains 'total' 
+					$total_records = isset($total_records_row['total']) && is_numeric($total_records_row['total'])
+					? (int)$total_records_row['total'] //Cast to an integer for safety
+					: 0; //Default to 0 if 'total' is not set or not numeric
+				} else {
+					// Handle query failure
+					$total_records = 0;
+				}
+				
+				// Now $tatal_records is safe to use in calculations
+				$total_pages = ceil($total_records / $limit);
+			
                 // Close the PostgreSQL connection
                 pg_close($conn);
             ?>
@@ -131,7 +142,7 @@
                 }
                 // Page Number Links
                 for ($i = 1; $i <= $total_pages; $i++) {
-                    if ($i == $page) {
+                    if ($i === $page) {
                         echo "<strong>$i</strong> "; // Current page in bold
                     } else {
                         echo "<a href='?page=$i&sort_by=$sort_by&search_query=$search_query'>$i</a> ";
@@ -150,4 +161,3 @@
 <script src = "toggle.js"></script>  
 <!-- Main-Content Section Ends -->
 <?php include('modules/footer.php') ?>
-

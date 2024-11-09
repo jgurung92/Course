@@ -1,4 +1,3 @@
-
 <!-- Footer Section Starts -->
 <div class="footer">
                 <div class="wrapper">
@@ -6,5 +5,6 @@
                 </div>
         </div>
 <!-- Footer Section Ends Starts -->
+        <?php ?>
         </body>
 </html>

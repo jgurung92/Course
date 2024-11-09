@@ -45,7 +45,7 @@ if(isset($_POST['submit'])) {
     $password = trim($_POST['password']);  // Encrypt password with md5
 
     // Check if the field is empty
-    if (empty($full_name) || empty($username) || empty($password)) {
+    if ($full_name === '' || $username === '' || $password === '') {
         // Redirect with error message if any field is empty
         $_SESSION['admin-message'] = "Failed to add admin: All fields are required"; 
         header("Location: add-admin.php");
@@ -62,14 +62,14 @@ if(isset($_POST['submit'])) {
     $result = pg_query($conn, $sql);
 
     // Check if the query was successful
-    if ($result==true) {
+    if ($result !== false) {
         $_SESSION['admin-message'] = "Admin added successfully!"; // Store message in session
         header("Location: manage-admin.php");
     } else {
         $_SESSION['admin-message'] = "Failed to add admin"; 
         header("Location: add-admin.php");
     }
-// Close the connection
-pg_close($conn);
+	// close connection
+	pg_close ($conn);
 }
 ?>

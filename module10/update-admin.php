@@ -13,12 +13,21 @@
             $result = pg_query_params($conn, $sql, array($id)); 
 
             // Check whether the query is executed or not
-            if($result) {
+            if($result !== false) {
                 // Check whether the data is available or not
-                if(pg_num_rows($result) == 1) {
+                if(pg_num_rows($result) === 1) {
                     $row = pg_fetch_assoc($result);
-                    $full_name = $row['full_name'];
-                    $username = $row['username'];
+					if ($row !== false) {
+						// Check if 'full_name' is set, otherwise set a default value
+						$full_name = isset($row['full_name']) ? $row['full_name'] : '';
+
+						// Check if 'username' is set, otherwise set a default value
+						$username = isset($row['username']) ? $row['username'] : '';
+					} else {
+						// if $row is false set the default values for both fields
+						$full_name = '';
+						$username = '';
+					} 
                 } else {
                     // Redirect to the manage admin page
                     header('location: mange-admin.php');
@@ -30,6 +39,14 @@
 
         <form action="" method="POST">
             <table class="tbl-30">
+
+				<?php 
+					// Ensure $full_name is defined before using it in the HTML
+					$full_name = isset($full_name) ? $full_name : '';
+					$username = isset($username) ? $username : '';
+				?>
+
+				
                 <tr>
                     <td>Full Name: </td>
                     <td><input type="text" name="full_name" value="<?php echo $full_name; ?>"></td>
@@ -66,7 +83,7 @@
         $result = pg_query_params($conn, $sql, array($full_name, $username, $id));
 
         // Check whether the query executed successfully or not 
-        if($result) {
+        if($result !== false) {
             // Query Executed and admin updated successfully
             $_SESSION ['update'] = "<div class='success'>Admin Updated Successfully.</div>";
             header('location: manage-admin.php'); //redirect to manage-admin page
@@ -78,7 +95,5 @@
             exit();
         }
     }
-    // Close PostgreSQL connection
-    pg_close($conn);
 ?>
 <?php include('modules/footer.php') ?>

@@ -58,15 +58,6 @@ if(isset($_POST['submit'])) {
     // Encrypt password with md5
     $password = md5($password);
 
-    // check connection and handle errors
-    // if (!$conn) {
-    //     $_SESSION['message'] = "Database connection error.";
-    //     header("Location: manage-admin.php");
-    //     exit();
-    //     // header("Location: manage-admin.php?message=" . urlencode("Failed to add admin: Database connection error."));
-    //     // exit();
-    // }
-
     // SQL query to insert data into the 'admin' table
     $sql = "INSERT INTO admin (full_name, username, password) VALUES ('$full_name', '$username', '$password')";
 

@@ -1,3 +1,4 @@
+
 <?php
     // Include config file here for connection
     include('modules/config.php') ;
@@ -12,7 +13,7 @@
     $result = pg_query($conn, $sql);
 
     // Check wether the query executed successfully or not
-    if($result) {
+    if($result !== false) {
         // Create Session variable to display the message
         $_SESSION['delete'] = "<div class='success'>Admin Deleted Successfully</div>";
 

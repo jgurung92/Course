@@ -5,7 +5,9 @@
         <?php 
             if(isset($_GET['id'])) {
                 $id = $_GET['id'];
-            }
+            } else {
+				$id = '';
+			}
         ?>
 
         <form action="" method="POST">
@@ -51,18 +53,18 @@
         // Execute the Query with parameters
         $result = pg_query_params($conn, $sql, array($id, $current_password));
 
-        if($result) {
+        if($result !== false) {
             // Check whether data is available or not
             $count = pg_num_rows($result);
-            if($count == 1) {
+            if($count === 1) {
                 // Check whether the new password and confirm match or not
-                if($new_password == $confirm_password) {
+                if($new_password === $confirm_password) {
                     // Update Password
                     $sql2 = "UPDATE admin SET password = $1 WHERE id = $2";
                     // Execute the Update Query with parameters
                     $result2 = pg_query_params($conn, $sql2, array($new_password, $id));
                     // Check whether the query executed successfully
-                    if($result2) {
+                    if($result2 !== false) {
                         // Redirect to Manage Admin with Success Message
                         $_SESSION['change-pwd'] = "<div class='success'>Password Changed Successfully. </div>";
                         header('location: manage-admin.php');
@@ -91,8 +93,6 @@
             header('location: manage-admin.php');
             exit();
         }
-        // Close PostgreSQL connection
-        pg_close($conn);
     }
 ?> 
 <?php include('modules/footer.php') ?>
