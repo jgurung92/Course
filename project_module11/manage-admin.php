@@ -59,7 +59,7 @@
         <table class="tbl-full">
             <tr>
                 <th>S.N.</th> 
-                <th class="id-column">ID</th>   <!--actual id display here -->
+                <th class="id-column">ID</th>   
                 <th>Full Name</th>
                 <th>Username</th>
                 <th>Actions</th>
@@ -96,10 +96,16 @@
                             <td><?php echo htmlspecialchars($full_name); ?></td>
                             <td><?php echo htmlspecialchars($username); ?></td>
                             <td>
-                                <a href="update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
-                                <a href="update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
-                                <a href="delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
+                                <select name="action" id="action-<?php echo $id; ?>" class="action-dropdown">
+                                    <option value="">Select Action</option>
+                                    <option value="update-password">Change Password</option>
+                                    <option value="update-admin">Update Admin</option>
+                                    <option value="delete-admin">Delete Admin</option>
+                                </select>
+                                <button type="button" onclick="handleGoButtonClick(<?php echo $id; ?>)" class="btn-primary">Go</button>
                             </td>
+
+                            
                         </tr>
             <?php
                         }

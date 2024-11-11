@@ -70,19 +70,6 @@
 
 <?php
 
-$adminId = $_SESSION['admin_id'];         // Admin's ID from session
-$adminUsername = $_SESSION['admin_username']; // Admin's username from session
-
-// Log the password update activity
-$activityDescription = "Admin updated their password";
-$action = "update";
-
-insertActivityLog($activityDescription, $adminId, $adminUsername, $action);
-
-
-
-
-
     // Check whether the submit Button is clicked or not
     if(isset($_POST['submit'])) {
         // Get all the values from form to update

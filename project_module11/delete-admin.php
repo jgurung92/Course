@@ -3,6 +3,7 @@
 
     // Include config file here for connection
     include('modules/config.php') ;
+    include('toggle.js');
 
     // 1. get the ID of Admin to be deleted.
     echo $id = intval($_GET['id']);

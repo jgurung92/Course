@@ -18,3 +18,20 @@ function applySearchSort() {
 
     window.location.href = url.toString();
 }            
+
+
+function handleGoButtonClick(adminId) {
+    // Get the selected action from the dropdown
+    const selectElement = document.getElementById(`action-${adminId}`);
+    const selectedAction = selectElement.value;
+
+    // Check if an action is selected
+    if (selectedAction) {
+        // Construct the URL with the selected action and admin ID
+        const url = `${selectedAction}.php?id=${adminId}`;
+        // Redirect to the constructed URL
+        window.location.href = url;
+    } else {
+        alert("Please select an action first.");
+    }
+}
