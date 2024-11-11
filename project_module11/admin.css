@@ -1,0 +1,247 @@
+/* 
+    Auther: Jiten Gurung
+    Theme: Restaurant
+    version: 1.0
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    /* border: 1px solid black;   */
+    padding: 1%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+.tbl-full {
+    width: 100%;
+}
+
+.tbl-30 {
+    width: 30%;
+}
+
+table tr th {
+    border-bottom: 1px solid black;
+    /* border: 1px solid red; */
+    padding: 1%;
+    text-align: center;
+
+}
+
+table tr td {
+    text-align: left;
+    padding: 1%;
+    /* border: 1px solid red;  */
+}
+
+.id-column {
+    padding: 0 10px;
+}
+
+
+.btn-primary {
+    background-color: #1e90ff;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: .2rem;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #3742fa;
+}
+
+.btn-secondary {
+    background-color: #7bed9f;
+    padding: 1%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: .2rem;
+}
+
+.btn-secondary:hover {
+    background-color: #2ed573;
+}
+
+.btn-danger {
+    background-color: #ff6b81;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: .2rem;
+}
+
+.btn-danger:hover {
+    background-color: #ff4757;
+}
+
+.success {
+    margin-bottom: 3%;
+    color: #2ed573;
+}
+
+.error {
+    color: #ff4757;
+    margin-bottom: 3%; 
+}
+
+h4 {
+    text-align: center;
+    color: #dc7633 ;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* CSS for Menu */
+
+.menu {
+    padding: 1%;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu ul li {
+    display: inline;
+    padding: 1%;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ff6b81;
+}
+
+.menu ul li a:hover {
+    color: #ff4757;
+} 
+
+/* CSS for main content */
+.main-content {
+    background-color: #f1f2f6;  
+    padding: 3% 0;  
+    border: 1px solid lightgrey;
+    width: 98%;
+    margin: 1% auto;
+}
+
+.col-4 {
+    width: 18%;
+    background-color: white;
+    margin: 1%; 
+    padding: 2%; 
+    float: left; 
+}
+
+.message {
+    border: 1px solid red;
+    padding: 10px;
+    margin: 15px 0;
+    background-color: #d4edda; /* light green background for success */
+    color: #155724; /* dark green text color */
+    border: 1px solid #c3e6cb; /* border matching background */
+    border-radius: 5px;
+}
+
+/* CSS for footer */
+.footer {
+    /* border: 1px solid red; */
+    background-color: #ff6b81;
+    color: white;
+}
+
+/* CSS for Login */
+.login {
+    background-color: #dfe4ea;
+    width: 40%;
+    border: 1px solid grey;
+    margin: 10% auto;
+    padding: 2%;
+}
+
+.input {
+    width: 80%;
+    padding: 2%;
+    border: none;
+    border-radius: .3rem;
+}
+
+.pagination {
+    margin-top: 2%;
+    padding: 1%;
+}
+
+.pagination a {
+    margin: 0 3px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination a:hover {
+    background-color: #1e90ff; /* Change color on hover */
+    color: white;
+}
+
+
+.manage-admin-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-sort-options {
+    display: flex;  
+    gap: 20px;
+    align-items: center;
+} 
+
+.search-sort-options input,
+.search-sort-options select {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+}
+
+.search-sort-options button {
+    padding: 5px 10px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-sort-options button:hover {
+    background-color: #218838;
+}
+
+.pagination a, .pagination strong {
+    margin: 0 5px;
+}
