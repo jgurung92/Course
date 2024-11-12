@@ -96,16 +96,14 @@
                             <td><?php echo htmlspecialchars($full_name); ?></td>
                             <td><?php echo htmlspecialchars($username); ?></td>
                             <td>
-                                <select name="action" id="action-<?php echo $id; ?>" class="action-dropdown">
+                                <select name="action" id="action-<?php echo $id; ?>" class="action-dropdown" >
                                     <option value="">Select Action</option>
                                     <option value="update-password">Change Password</option>
                                     <option value="update-admin">Update Admin</option>
                                     <option value="delete-admin">Delete Admin</option>
                                 </select>
-                                <button type="button" onclick="handleGoButtonClick(<?php echo $id; ?>)" class="btn-primary">Go</button>
-                            </td>
-
-                            
+                                <button type="button" onclick="goButton(<?php echo $id; ?>)" class="btn-primary go-button">Go</button>
+                            </td>   
                         </tr>
             <?php
                         }

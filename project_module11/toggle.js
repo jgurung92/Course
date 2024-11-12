@@ -19,8 +19,7 @@ function applySearchSort() {
     window.location.href = url.toString();
 }            
 
-
-function handleGoButtonClick(adminId) {
+function goButton(adminId) {
     // Get the selected action from the dropdown
     const selectElement = document.getElementById(`action-${adminId}`);
     const selectedAction = selectElement.value;

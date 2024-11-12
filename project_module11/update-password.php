@@ -30,7 +30,7 @@
                 <tr>
                     <td colspan="2">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Change Password" class="btn-secondary">
+                        <input type="submit" name="submit" value="Change Password" class="btn-primary input">
                     </td>
                 </tr>
             </table>

@@ -13,22 +13,22 @@
             <table class="tbl-30">
                 <tr>
                     <td>Full Name: </td>
-                    <td><input type="text" name="full_name" placeholder="Enter Your Name"></td>
+                    <td><input type="text" name="full_name" placeholder="Enter Your Name" ></td>
                 </tr>
 
                 <tr>
                     <td>Username: </td>
-                    <td><input type="text" name="username" placeholder="Your Username"></td>
+                    <td><input type="text" name="username" placeholder="Your Username" ></td>
                 </tr>
 
                 <tr>
                     <td>Password: </td>
-                    <td><input type="password" name="password" placeholder="Your Password"></td>
+                    <td><input type="password" name="password" placeholder="Your Password" ></td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Admin" class="btn-secondary">
+                        <input type="submit" name="submit" value="Add Admin" class="btn-primary input">
                     </td>
                 </tr>
             </table>
@@ -83,23 +83,5 @@ if(isset($_POST['submit'])) {
 
     // Close connection
     pg_close($conn);
-
-
-    // // SQL query to insert data into the 'admin' table
-    // $sql = "INSERT INTO admin (full_name, username, password) VALUES ('$full_name', '$username', '$password')";
-
-    // // Execute the query
-    // $result = pg_query($conn, $sql);
-
-    // // Check if the query was successful
-    // if ($result !== false) {
-    //     $_SESSION['admin-message'] = "Admin added successfully!"; // Store message in session
-    //     header("Location: manage-admin.php");
-    // } else {
-    //     $_SESSION['admin-message'] = "Failed to add admin"; 
-    //     header("Location: add-admin.php");
-    // }
-	// // close connection
-	// pg_close ($conn);
 }
 ?>

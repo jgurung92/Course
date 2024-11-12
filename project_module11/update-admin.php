@@ -1,7 +1,7 @@
 <?php include('modules/menu.php') ?>
 <div class="main-content">
     <div class="wrapper">
-        <h1>Update Admin</h1>
+        <h1>Update Admin</h1><br>
         <?php 
             // Get the id of selected Admin
             $id = $_GET['id'];
@@ -45,22 +45,18 @@
 					$full_name = isset($full_name) ? $full_name : '';
 					$username = isset($username) ? $username : '';
 				?>
-
-				
                 <tr>
                     <td>Full Name: </td>
                     <td><input type="text" name="full_name" value="<?php echo $full_name; ?>"></td>
                 </tr>
-
                 <tr>
                     <td>Username: </td>
                     <td><input type="text" name="username" value="<?php echo $username; ?>"></td>
                 </tr>
-
                 <tr>
                     <td colspan="2">
                         <input type="hidden" name="id" value="<?php echo trim($id); ?> ">
-                        <input type="submit" name="submit" value="Update Admin" class="btn-secondary">
+                        <input type="submit" name="submit" value="Update Admin" class="btn-primary input">
                     </td>
                 </tr>
             </table>

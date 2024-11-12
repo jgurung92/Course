@@ -13,7 +13,7 @@ include('modules/activity-log.php');
         <div class="login">
             <h1 class="text-center">
                 <img src="images/newlogo.png" alt="logo">
-                <h4>Nepal Restaurant</h4>
+                <h4>Nepal Restaurant</h4><br>
             </h1>
 
             <?php 
