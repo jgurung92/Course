@@ -1,7 +1,7 @@
 <?php
 
 function log_activity($conn, $admin_id, $admin_username, $activity_description, $action) {
-    echo "Logging activity..."; 
+    // echo "Logging activity..."; 
     // Capture the current timestamp for the log
     $time = date('Y-m-d H:i:s'); // stores timestamp in the database in the default format
 
@@ -16,7 +16,7 @@ function log_activity($conn, $admin_id, $admin_username, $activity_description, 
         return true;
     } else {
         // Log insertion failed
-        echo "Error logging activity: " . pg_last_error($conn);
+        // echo "Error logging activity: " . pg_last_error($conn);
         return false;
     }
 }
