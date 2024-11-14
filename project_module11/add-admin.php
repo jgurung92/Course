@@ -73,11 +73,9 @@ if(isset($_POST['submit'])) {
 
         // Redirect to manage-admin.php
         header("Location: manage-admin.php");
-        exit();
     } else {
         $_SESSION['admin-message'] = "Failed to add admin"; 
         header("Location: add-admin.php");
-        exit();
     }
 
     // Close connection

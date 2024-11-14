@@ -67,26 +67,23 @@ include('modules/activity-log.php');
     if ($result !== false && pg_num_rows($result) === 1) {
         // User exists, login success
         $admin_data = pg_fetch_assoc($result);
-        // $adminId = $admin_data['id'];
         $adminUsername = $admin_data['username'];
         
         // Store the username in session to check login status
-        $_SESSION['login'] = "<div class='success text-center'>Login Successful</div>";
         $_SESSION['user'] = $adminUsername;
 
         // Log the successful login activity
         $activityDescription = "$adminUsername logged in successfully";
         $action = "login";
-        log_activity($conn, $adminUsername, $activityDescription, $action);
 
-        // Redirect to manage-admin.php
-        header("Location: manage-admin.php");
-        exit();
+        // call log_activity function
+        log_activity($conn, $adminUsername, $activityDescription, $action);
+        $_SESSION['login'] = "<div class='success '>Login Successful</div>";
+        header("Location: manage-admin.php");   // Redirect to manage-admin.php
     } else {
         // Login failed
         $_SESSION['login'] = "<div class='error text-center'>Username or Password did not match</div>";
         header("Location: login.php"); // Redirect back to login page with error message
-        exit();
         }
     }
 ?>

@@ -1,4 +1,6 @@
-<?php include('modules/menu.php') ?>
+<?php 
+include('modules/menu.php'); 
+?>
 
 <!-- Main-Content Section Starts -->
 <div class="main-content"> 
@@ -30,6 +32,10 @@
             if (isset($_SESSION['change-pwd'])) {
                 echo $_SESSION['change-pwd'];
                 unset($_SESSION['change-pwd']); 
+            }
+            if (isset($_SESSION['login'])) {
+                echo $_SESSION['login'];
+                unset($_SESSION['login']); 
             }
         ?>
 

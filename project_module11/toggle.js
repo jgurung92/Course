@@ -1,13 +1,5 @@
 
-function toggleSearch() {
-    const options = document.getElementById('search-sort-options');
-    if (options.style.display === 'none' || options.style.display === '') {
-        options.style.display = 'flex';
-    } else {
-        options.style.display = 'none';
-    }
-}
-
+// function for sorting and searching by ID, username or full_name.
 function applySearchSort() {
     const sortBy = document.getElementById('sort-by').value;
     const searchQuery = document.getElementById('search-query').value;
