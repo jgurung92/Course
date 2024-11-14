@@ -1,17 +1,17 @@
 <?php
 
 
-function log_activity($conn, $adminId, $adminUsername, $activityDescription, $action) {
+function log_activity($conn, $adminUsername, $activityDescription, $action) {
 
-    // Ensure the description and username are safe to insert
-    $adminUsername = pg_escape_string($adminUsername);
-    $activityDescription = pg_escape_string($activityDescription);
-    $action = pg_escape_string($action);
+    // // Ensure the description and username are safe to insert
+    $ipAddress = $_SERVER['REMOTE_ADDR']=== '::1' ? '127.0.0.1' : $_SERVER['REMOTE_ADDR'];
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+
 
     // SQL query to insert into activity_log table
-    $sql = "INSERT INTO activity_log (admin_id, admin_username, activity_description, action) 
-            VALUES ($1, $2, $3, $4)";
-    $params = array($adminId, $adminUsername, $activityDescription, $action);
+    $sql = "INSERT INTO activity_log (admin_username, activity_description, action, ip_address, user_agent ) 
+            VALUES ($1, $2, $3, $4, $5)";
+    $params = array($adminUsername, $activityDescription, $action, $ipAddress, $userAgent);
 
     // Execute the query with parameters
     $result = pg_query_params($conn, $sql, $params);
@@ -23,5 +23,10 @@ function log_activity($conn, $adminId, $adminUsername, $activityDescription, $ac
         error_log("Error inserting activity log: " . pg_last_error($conn));
         return false;
     }
+    // close the connection
+    pg_close($conn);
 }
 ?>
+
+
+<!-- CREATE INDEX idx_user_id ON user_activity_logs (user_id); -->

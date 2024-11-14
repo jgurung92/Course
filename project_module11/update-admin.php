@@ -2,6 +2,7 @@
 <div class="main-content">
     <div class="wrapper">
         <h1>Update Admin</h1><br>
+
         <?php 
             // Get the id of selected Admin
             $id = $_GET['id'];
@@ -84,18 +85,19 @@
             $_SESSION['update'] = "<div class='success'>Admin Updated Successfully.</div>";
     
             // Insert activity log after successful update
-            $adminId = $_SESSION['admin_id'];  // the logged-in admin's ID
-            $adminUsername = $_SESSION['admin_username']; // logged-in admin's username
-            $activityDescription = "$admin_username Updated $id with new username: $username and new full name: $full_name ";
+            $adminUsername = $_SESSION['user']; // logged-in admin's username
+            $activityDescription = "$adminUsername Updated admin_id $id with new username: $username";
             $action = "update-admin";
+            // $_SESSION['user'] = $adminUsername;
     
             // Call log_activity function
-            if (log_activity($conn, $adminId, $adminUsername, $activityDescription, $action) === false) {
+            if (log_activity($conn, $adminUsername, $activityDescription, $action) === false) {
                 error_log("Failed to insert update activity log.");
             }
     
             header('location: manage-admin.php'); // Redirect to manage-admin page
             exit();
+        
         } else {
             $_SESSION['update'] = "<div class='error'>Failed to Update Admin.</div>";
             header('location: manage-admin.php');

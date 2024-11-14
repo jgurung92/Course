@@ -67,7 +67,7 @@ include('modules/activity-log.php');
     if ($result !== false && pg_num_rows($result) === 1) {
         // User exists, login success
         $admin_data = pg_fetch_assoc($result);
-        $adminId = $admin_data['id'];
+        // $adminId = $admin_data['id'];
         $adminUsername = $admin_data['username'];
         
         // Store the username in session to check login status
@@ -77,7 +77,7 @@ include('modules/activity-log.php');
         // Log the successful login activity
         $activityDescription = "$adminUsername logged in successfully";
         $action = "login";
-        log_activity($conn, $adminId, $adminUsername, $activityDescription, $action);
+        log_activity($conn, $adminUsername, $activityDescription, $action);
 
         // Redirect to manage-admin.php
         header("Location: manage-admin.php");

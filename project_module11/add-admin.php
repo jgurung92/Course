@@ -63,13 +63,13 @@ if(isset($_POST['submit'])) {
     if ($result !== false) {
         $_SESSION['admin-message'] = "Admin added successfully!"; // Store message in session
 
-        $adminID = $_SESSION['admin_id'];  // Assuming logged-in admin's ID is stored in session
+        // $adminID = $_SESSION['admin_id'];  // Assuming logged-in admin's ID is stored in session
         $adminUsername = $_SESSION['user']; // Assuming logged-in admin's username is stored in session
-        $activityDescription = "$admin_username added a new admin with username $username";
+        $activityDescription = "$adminUsername added a new admin with fullname $full_name and username $username ";
         $action = "add-admin";
 
         // Log the add-admin activity
-        log_activity($conn, $adminId, $adminUsername, $activityDescription, $action);
+        log_activity($conn, $adminUsername, $activityDescription, $action);
 
         // Redirect to manage-admin.php
         header("Location: manage-admin.php");
