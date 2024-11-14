@@ -1,4 +1,7 @@
-<?php include('modules/menu.php') ?>
+<?php 
+include('modules/menu.php'); 
+?>
+
 <div class="main-content">
     <div class="wrapper">
         <h1>Update Admin</h1><br>
@@ -84,20 +87,15 @@
         if ($result !== false) {
             $_SESSION['update'] = "<div class='success'>Admin Updated Successfully.</div>";
     
-            // Insert activity log after successful update
+            // Insert activity log after successfully updating password
             $adminUsername = $_SESSION['user']; // logged-in admin's username
-            $activityDescription = "$adminUsername Updated admin_id $id with new username: $username";
-            $action = "update-admin";
+            $activityDescription = "Updated admin_id: $id with new username: $username successfully";
+            $action = "update-password";
             // $_SESSION['user'] = $adminUsername;
     
             // Call log_activity function
-            if (log_activity($conn, $adminUsername, $activityDescription, $action) === false) {
-                error_log("Failed to insert update activity log.");
-            }
-    
+            log_activity($conn, $adminUsername, $activityDescription, $action);  
             header('location: manage-admin.php'); // Redirect to manage-admin page
-            exit();
-        
         } else {
             $_SESSION['update'] = "<div class='error'>Failed to Update Admin.</div>";
             header('location: manage-admin.php');

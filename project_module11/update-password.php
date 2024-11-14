@@ -69,14 +69,19 @@
                         // Redirect to Manage Admin with Success Message
                         $_SESSION['change-pwd'] = "<div class='success'>Password Changed Successfully. </div>";
 
-                        // Prepare the activity description and action
-                        $adminId = $_SESSION['admin_id'];  // Assuming this is the logged-in admin's ID
-                        $adminUsername = $_SESSION['admin_username']; 
-                        $activityDescription = "$admin_username updated the password for $username";
-                        $action = "update-password";
+                        
+                        $adminUsername = $_SESSION['user'];
+                        // Insert activity log after successfully updating password
+                        $adminUsername = $_SESSION['user']; // logged-in admin's username
+                        $activityDescription = "$adminUsername Updated Password for admin_id: $id successfully";
+                        $action = "Delete-Password";
 
-                        // Call the log_activity function to log this activity
-                        $log_result = log_activity($conn, $adminId, $adminUsername, $activityDescription, $action);
+                
+                        // Call log_activity function
+                        log_activity($conn, $adminUsername, $activityDescription, $action); 
+
+
+
                         header('location: manage-admin.php');
                         exit();
                     } else {
