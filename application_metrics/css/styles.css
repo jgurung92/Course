@@ -1,0 +1,209 @@
+/* CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%; 
+}
+
+/* Container styles */
+.container {
+    background: #fff;
+    padding: 20px;
+    /* border: 1px solid #007bff; */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Heading */
+.container h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color:darksalmon;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;   
+}
+
+/* Labels */
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Inputs */
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Submit button */
+form input[type="submit"] {
+    background-color: darksalmon;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 1%;
+    /* font-size: 1rem;  */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color:coral;
+}
+
+/* Message styles */
+.message {
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* CSS for application dashboard metrics */
+
+.metric-container {
+    /* border: 1px solid red; */
+    width: 98%;  
+    margin: 50px auto;
+    background: #fff;
+    padding: 1%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}   
+
+.metric-container h1 {
+    /* font-size: 2rem; */
+    text-align: center;
+    /* color: #444; */
+    color: lightsalmon;
+}
+
+.canvas-size {
+    width: 100%;
+    padding: 2%;
+}
+
+.chart-wrapper {
+    display: flex;               
+    justify-content: space-between; 
+    align-items: flex-start;      
+    /* gap: 1%; */
+    /* border: 1px solid blue;*/
+    margin: 3% auto;
+}
+
+.chart-container {
+    /* border: 1px solid red; */
+    width: 40%;                  
+    text-align: center;          
+    /* margin: 0 auto; */
+}
+
+h3 {
+    text-align: center;
+}
+
+.table_display {
+    margin: 0 auto; 
+    /* border: 1px solid green;    */
+    width: 100%;  
+    text-align: center; 
+    padding: 2%; 
+    
+} 
+
+tr th {
+    /* font-size: 3rem; */
+    padding-bottom: 1%;
+    text-align: left;
+}
+
+tr td {
+    /* font-size: 3rem; */
+    text-align: left;
+} 
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        width: 90%; 
+    }
+
+    form input, form select {
+        font-size: 0.9rem;
+    }
+
+    form input[type="submit"] {
+        font-size: 0.9rem;
+    }
+
+    /* Responsive design for Dashboard metrics */
+    .metric-container {
+        width: 95%;
+        margin: 20px auto;
+        padding: 2%;
+    }
+
+    .metric-container h1 {
+        font-size: 1.5rem; 
+    }
+
+    .chart-wrapper {
+        flex-direction: column; 
+        align-items: center;    
+        margin: 2% auto;
+    }
+
+    .chart-container {
+        width: 90%; 
+        margin-bottom: 20px; 
+    }
+
+    .table_display {
+        width: 100%;
+        padding: 1%;
+    }
+
+    tr th, tr td {
+        font-size: 1rem; 
+    }
+
+}
