@@ -1,11 +1,5 @@
 <?php
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
-
 
 // Database connection
     $host = 'localhost';
@@ -37,8 +31,5 @@ if(isset($_POST['user_input'])) {
         echo "Sorry, I didn't understand that.";
     }
 };
-
-
-
 ?>
 
