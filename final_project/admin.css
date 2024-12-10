@@ -1,0 +1,532 @@
+/* 
+    Auther: Jiten Gurung
+    Theme: Restaurant
+    version: 1.0
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    /* border: 1px solid black;    */
+    padding: 1%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+.tbl-full {
+    width: 100%;
+}
+
+.tbl-30 {
+    /* border: 2px solid red; */
+    width: 100%; 
+
+}
+
+tr td input {
+    /* border: 2px solid red; */
+    width: 100%;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+.post-label {
+    /* border: 1px solid red; */
+    width: 10px;
+
+} 
+
+table tr th {
+    border-bottom: 1px solid black;  
+    /* border: 1px solid red; */
+    padding: 1%;
+    text-align: left;
+}
+
+table tr td {
+    text-align: left;
+    padding: 1%;
+    /* border: 1px solid red;  */
+    display:flexbox; 
+}
+
+.select-box {
+    /* border: 1px solid green; */
+    display: flex;
+    gap: 2%;
+}
+
+.id-column {
+    padding: 0 10px;
+}
+
+
+.btn-primary {
+    background-color: rgb(159, 158, 158);
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: .2rem;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
+.success {
+    margin-bottom: 3%;
+    color: #2ed573;
+}
+
+.error {
+    color: #ff4757;
+    margin-bottom: 3%; 
+}
+
+h4 {
+    text-align: center;
+    color: #dc7633 ;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* CSS for Menu */
+
+.menu {
+    background-color: #f1f2f6;
+    padding: 1%;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu ul li {
+    display: inline;
+    padding: 1%;
+}
+
+.menu ul li a {
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    /* color: #ff6b81; */
+    color: black;
+}
+
+.menu ul li a:hover {
+    color: #ff4757;
+} 
+
+/* CSS for main content */
+.main-content {
+    background-color: #f1f2f6;  
+    padding: 3% 0;  
+    border: 1px solid lightgrey;
+    width: 98%;
+    margin: 1% auto;
+}
+
+.col-4 {
+    width: 18%;
+    background-color: white;
+    margin: 1%; 
+    padding: 2%; 
+    float: left; 
+}
+
+.message {
+    border: 1px solid red;
+    padding: 10px;
+    margin: 15px 0;
+    background-color: #d4edda; /* light green background for success */
+    color: #155724; /* dark green text color */
+    border: 1px solid #c3e6cb; /* border matching background */
+    border-radius: 5px;
+}
+
+/* CSS for footer */
+.footer {
+    /* border: 1px solid red; */
+    background-color: #f1f2f6;
+    color: black;
+}
+
+/* CSS for Login */
+.login {
+    background-color: #dfe4ea;;
+    width: 40%;
+    border: 1px solid grey;
+    margin: 10% auto;
+    padding: 2%;
+}
+
+.input {
+    width: 80%;
+    padding:2%;
+    border: none;
+    border-radius: .3rem;
+}
+
+.go-button {
+    padding: 1% 7%;
+}
+
+.pagination {
+    margin-top: 2%;
+    padding: 1%;
+}
+
+.pagination a {
+    margin: 0 3px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.pagination a.active {
+    background-color: rgb(159, 158, 158);
+    color: white;
+}
+
+.pagination a:hover {
+    background-color: grey; 
+    color: white;
+}
+
+
+.manage-admin-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-sort-options {
+    /* border: 4px solid green;  */
+    display: flex;  
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+} 
+
+
+.search-sort-options input,
+.search-sort-options  select {
+    /* padding: 5px 10px; */
+    font-size: 16px;
+    border: 1px solid #ccc;  
+    border-radius: 5px;
+    width: 10rem;
+    height: 2rem;
+    padding: 1.5%;
+}
+
+.search-sort-options input{
+    /* border: 3px solid red; */
+    width: 60%;
+    padding: 1.5%;
+}
+
+.search-sort-options button {
+    padding: .75%;
+    /* background-color: #1e90ff; */
+    background-color:rgb(159, 158, 158);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.search-sort-options button:hover {
+    background-color: grey;
+}
+
+.pagination a, .pagination strong {
+    margin: 0 5px;
+}
+
+/* css for chat bot */
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 400px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 1000;
+}
+
+.chat-container h1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    margin: 0;
+}
+
+#messages {
+    height: 200px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#chat-form {
+    display: flex;
+    align-items: center;
+}
+
+#user_input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+#chat-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#chat-form button:hover {
+    background-color: #0056b3;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-button:hover {
+    background-color: darkred;
+}
+
+.reopen-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.reopen-button:hover {
+    background-color: #0056b3;
+}
+
+img {
+    height: 45px; 
+    display: inline;  
+    padding-right: 4%;
+}
+
+.user-message {
+    background: #cfe2f3;
+    padding: 1%;
+    border-radius: 4px;
+    margin: 5px auto;
+}
+
+.bot-message{
+    /* border: 1px solid red;  */
+    background: #d9ead3;
+    padding: 2%;  
+    border-radius: 4px;
+    margin: 5px auto;
+    padding-bottom: 2%;
+} 
+
+
+/* CSS FOR HOME PAGE */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.table-container {
+    margin: 20px auto;
+    max-width: 90%;
+    overflow-x: auto;
+}
+
+.home-table {
+    border: 1px solid red;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+} 
+
+
+.home-row {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.home-row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.home-row:hover {
+    background-color: #f1f1f1;
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Media Queries for Responsive Design */
+/* For tablets (width: 768px and below) */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+        padding: 2%;
+    }
+
+    .menu ul li {
+        display: block;
+        padding: 5px 0;
+    }
+
+    .col-4 {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .search-sort-options input,
+    .search-sort-options select {
+        width: 80%;
+    }
+
+    .search-sort-options button {
+        width: 100%;
+    }
+
+    .table-container {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .chat-container {
+        width: 100%;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+
+    #messages {
+        height: 150px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    .menu ul li a {
+        font-size: 20px;
+    }
+
+    .home-table {
+        font-size: 0.8rem;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+
+    .pagination a {
+        font-size: 12px;
+        padding: 3px 5px;
+    }
+
+    .chat-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .reopen-button {
+        padding: 8px 10px;
+    }
+
+    #user_input {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    #chat-form button {
+        padding: 5px 8px;
+        font-size: 14px;
+    }
+}
+
+/* fine-tuning for small devices */
+@media (max-width: 320px) {
+    .menu ul li a {
+        font-size: 16px;
+    }
+
+    .btn-primary {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .search-sort-options input {
+        font-size: 12px;
+        padding: 2%;
+    }
+
+    #messages {
+        height: 100px;
+    }
+}
